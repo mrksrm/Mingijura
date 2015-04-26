@@ -17,7 +17,18 @@ v0.23 + 1
   the opportunity for concurrent operations and not committing any
   changes until the unlock.
 
+* `git_commit_create_on()` takes on the role which
+  `git_commit_create()` had when provided a reference name to
+  update. `git_commit_create_on_head()` always updates the current
+  branch.
+
+* `git_commit_create_fromstate()` is a variant of the commit creation
+  function which behaves closer to `git-commit` by taking the parents
+  and tree from the current branch and the index.
+
 ### API removals
+
+* `git_commit_create()` has been renamed to `git_commit_create_on()`.
 
 ### Breaking API changes
 
